@@ -18,6 +18,14 @@ public class Frame extends JFrame {
     JLabel playmessage = new JLabel("Player 1, it's your turn", SwingConstants.CENTER);
 
     public Frame() {
+        String lookAndFeel = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
+
+        try {
+            UIManager.setLookAndFeel(lookAndFeel);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+
         JPanel panel = new JPanel();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 500);
