@@ -107,14 +107,16 @@ public class Game implements ActionListener {
         if (e.getSource() == reset) {
             reset.setVisible(false);
             message.setText("Let's play a game!");
-            for (int i = 0; i < 3; i++) {
-                winners[i].setBackground(null);
-            }
+
             for (int i = 0; i < 9; i++) {
                 buts[i].setEnabled(true);
                 buts[i].setText("");
                 turn = true;
                 playmessage.setText(p1);
+            }
+            if (winners == null) return;
+            for (int i = 0; i < 3; i++) {
+                winners[i].setBackground(null);
             }
         }
     }
